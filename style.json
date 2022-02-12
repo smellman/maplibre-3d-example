@@ -21,6 +21,16 @@
     "hoppo": {
       "type": "vector",
       "url": "https://tile.openstreetmap.jp/data/hoppo.json"
+    },
+    "gsibv-vectortile-source-1-4-16": {
+      "type": "vector",
+      "tiles": [
+        "https://cyberjapandata.gsi.go.jp/xyz/experimental_bvmap/{z}/{x}/{y}.pbf"
+      ],
+      "minZoom": 0,
+      "maxZoom": 14,
+      "minzoom": 4,
+      "maxzoom": 16
     }
   },
   "sprite": "https://tile.openstreetmap.jp/styles/maptiler-basic-ja/sprite",
@@ -220,6 +230,7 @@
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "building",
+      "layout": {"visibility": "none"},
       "paint": {
         "fill-antialias": true,
         "fill-color": "rgba(222, 211, 190, 1)",
@@ -230,6 +241,66 @@
             [16, "rgba(212, 177, 146, 0.5)"]
           ]
         }
+      }
+    },
+    {
+      "id": "buildings3103",
+      "type": "fill-extrusion",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "building",
+      "filter": ["all", ["==", "ftCode", 3103], ["==", "$type", "Polygon"]],
+      "paint": {
+        "fill-extrusion-color": "hsl(39, 41%, 86%)",
+        "fill-extrusion-base": ["literal", 0],
+        "fill-extrusion-height": 60
+      }
+    },
+    {
+      "id": "buildings3101",
+      "type": "fill-extrusion",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "building",
+      "filter": ["all", ["==", "ftCode", 3101], ["==", "$type", "Polygon"]],
+      "paint": {
+        "fill-extrusion-color": "hsl(39, 41%, 86%)",
+        "fill-extrusion-height": 6,
+        "fill-extrusion-base": ["literal", 0]
+      }
+    },
+    {
+      "id": "buildings3102",
+      "type": "fill-extrusion",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "building",
+      "filter": ["all", ["==", "ftCode", 3102], ["==", "$type", "Polygon"]],
+      "paint": {
+        "fill-extrusion-color": "hsl(39, 41%, 86%)",
+        "fill-extrusion-base": ["literal", 0],
+        "fill-extrusion-height": 18
+      }
+    },
+    {
+      "id": "buildings3112",
+      "type": "fill-extrusion",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "building",
+      "filter": ["all", ["==", "ftCode", 3112], ["==", "$type", "Polygon"]],
+      "paint": {
+        "fill-extrusion-color": "hsl(39, 41%, 86%)",
+        "fill-extrusion-height": 18,
+        "fill-extrusion-base": ["literal", 0]
+      }
+    },
+    {
+      "id": "buildings3111",
+      "type": "fill-extrusion",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "building",
+      "filter": ["all", ["==", "ftCode", 3111], ["==", "$type", "Polygon"]],
+      "paint": {
+        "fill-extrusion-color": "hsl(39, 41%, 86%)",
+        "fill-extrusion-height": 6,
+        "fill-extrusion-base": ["literal", 0]
       }
     },
     {
@@ -890,6 +961,7 @@
       "source": "openmaptiles",
       "source-layer": "building",
       "filter": ["all", ["!has", "hide_3d"]],
+      "layout": {"visibility": "none"},
       "paint": {
         "fill-extrusion-height": {
           "type": "identity",
